@@ -4,14 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer />
-      <ItemDetailContainer />
-      <Footer />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/cat/:id' element={<ItemListContainer />} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
