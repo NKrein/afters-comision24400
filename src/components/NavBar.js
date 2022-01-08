@@ -16,8 +16,8 @@ const NavBar = () => {
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Cart</Nav.Link>
             <NavDropdown title="Categories" id="navbarDropdown">
-              <NavDropdown.Item as='span'><Link to='cat/electronics' >electronics</Link></NavDropdown.Item>
-              <NavDropdown.Item as='span'><Link to='cat/jewelery' >jewelery</Link></NavDropdown.Item>
+              <NavDropdown.Item as='span'><Link to='/cat/electronics' >electronics</Link></NavDropdown.Item>
+              <NavDropdown.Item as='span'><Link to='/cat/jewelery' >jewelery</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

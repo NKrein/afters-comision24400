@@ -4,8 +4,10 @@ import ItemDetail from "./ItemDetail";
 import Loader from "./Loader";
 
 const ItemDetailContainer = () => {
+
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
+  const [added, setAdded] = useState(false);
 
   // const id = 1;
   const { id } = useParams();
@@ -25,9 +27,14 @@ const ItemDetailContainer = () => {
       .finally(() => setLoading(false))
   }, [id]);
 
+  const onAdd = (count) => {
+    console.log(`Agregaste ${product.title}, cantidad: ${count}.`);
+    setAdded(true); // seteo en tru cuando es agregado el producto
+  }
+
   return (
     <>
-      {loading ? <Loader /> : <ItemDetail product={product} />}
+      {loading ? <Loader /> : <ItemDetail onAdd={onAdd} product={product} added={added} />}
     </>
   );
 }

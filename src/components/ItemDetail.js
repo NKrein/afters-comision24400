@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ({ product, onAdd, added }) => {
   return (
     <Container>
       <Row>
@@ -14,7 +15,7 @@ const ItemDetail = ({ product }) => {
           <p>{product.category}</p>
           <p>Precio ${product.price}</p>
           <p>{product.description}</p>
-          <ItemCount stock={product.stock} initial={1} />
+          {added ? <Link to='/cart'>Go to Cart</Link> : <ItemCount stock={5} initial={1} onAdd={onAdd} /> }
         </Col>
       </Row>
     </Container>
