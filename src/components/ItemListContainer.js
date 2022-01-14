@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import ItemList from "./ItemList";
 import Loader from "./Loader";
 
